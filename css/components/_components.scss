@@ -1,0 +1,499 @@
+.header__logo
+{
+    height: 3.25rem;
+}
+
+.search
+{
+    flex: 0 0 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__input
+    {
+        width: 90%;
+        font-family: inherit;
+        font-size: 1.5rem;
+        color: inherit;
+        background-color: $color-grey-light-2;
+        border: none;
+        outline: none;
+        border-radius: 1000px;
+        padding: 0.7rem 2rem;
+        transition: $transition;
+        margin-right: -3.5rem;
+
+        &:focus
+        {
+            width: 100%;
+            background-color: $color-grey-light-3;
+        }
+
+        ::placeholder
+        {
+            font-weight: 100;
+            color: $color-grey-light-4;
+        }
+    }
+
+    &__input:focus ~ &__button
+    {
+        background-color: $color-grey-light-3;
+    }
+
+    &__button
+    {
+        border: none;
+        outline: none;
+        background-color: $color-grey-light-2;
+
+        &:active
+        {
+            transform: translateY(2px);
+        }
+    }
+
+    &__icon
+    {
+        width: 2rem;
+        height: 2rem;
+        fill: $color-grey-dark-3;
+    }
+}
+
+.user-nav
+{
+    display: flex;
+    align-self: stretch;
+    align-items: center;
+
+    & > *
+    {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        padding: 2rem;
+        cursor: pointer;
+    }
+
+    & > *:hover
+    {
+        background-color: $color-grey-light-2;
+    }
+
+    &__icon-box
+    {
+        position: relative;
+    }
+
+    &__icon
+    {
+        width: 2.25rem;
+        height: 2.25rem;
+        fill: $color-grey-dark-2;
+    }
+
+    &__notification
+    {
+        font-size: 0.8rem;
+        width: 1.25rem;
+        height: 1.25rem;
+        border-radius: 50%;
+        background-color: $color-primary-light;
+        color: $color-white;
+        position: absolute;
+        top: 1.75rem;
+        right: 1.5rem;
+        text-align: center;
+    }
+
+    &__user-photo
+    {
+        height: 3.75rem;
+        border-radius: 50%;
+        margin-right: 1rem;
+    }
+
+    &__user-name
+    {
+        font-size: 1.3rem;
+        font-weight: 700;
+    }
+}
+
+.side-nav
+{
+    list-style: none;
+    font-size: 1.4rem;
+    margin-top: 3.5rem;
+
+    &__list-item
+    {
+        position: relative;
+
+        &:not(:last-child)
+        {
+            margin-bottom: 0.5rem;
+        }
+
+        &::before
+        {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 1%;
+            height: 100%;
+            transform: scaleY(0);
+            transition: transform 0.2s, width 0.3s 0.2s cubic-bezier(1, 0, 0, 1), background-color 0.1s;
+        }
+
+        &:hover::before, &--active
+        {
+            width: 100%;
+            background-color: $color-primary;
+            transform: scaleY(1);
+        }
+
+        &:active::before
+        {
+            background-color: $color-primary-light;
+        }
+    }
+
+    &__list-link
+    {
+        display: flex;
+        align-items: center;
+        position: relative;
+        z-index: 1;
+
+        &:link, &:visited
+        {
+            color: $color-grey-light-2;
+            text-decoration: none;
+            text-transform: uppercase;
+            padding: 1.5rem 3rem;
+        }
+    }
+
+    &__list-icon
+    {
+        width: 1.75rem;
+        height: 1.75rem;
+        fill: currentColor;
+        margin-right: 2rem;
+    }
+}
+
+.legal
+{
+    font-size: 1.2rem;
+    text-align: center;
+    color: $color-grey-light-4;
+    padding: 2.5rem;
+}
+
+.gallery
+{
+    display: flex;
+
+    &__image
+    {
+        width: 100%;
+        display: block;
+    }
+}
+
+.btn-inline
+{
+    border: none;
+    outline: none;
+    background-color: inherit;
+    color: $color-primary;
+    font-size: 1.3rem;
+    border-bottom: 1px solid currentColor;
+    padding-bottom: 2px;
+    cursor: pointer;
+    display: flex;
+    transition: $transition;
+
+    span
+    {
+        margin-left: 3px;
+        transition: margin-left 0.2s;
+    }
+
+    &:hover
+    {
+        color: $color-grey-dark-1;
+    }
+
+    &:hover span
+    {
+        margin-left: 8px;
+    }
+}
+
+.overview
+{
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid $color-grey-light-2;
+
+    &__heading
+    {
+        font-size: 2.25rem;
+        font-weight: 450;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        padding: 1.5rem 3rem;
+    }
+
+    &__stars
+    {
+        display: flex;
+        margin-right: auto;
+    }
+
+    &__icon-star, &__icon-location
+    {
+        width: 1.75rem;
+        height: 1.75rem;
+        fill: $color-primary;
+    }
+
+    &__location
+    {
+        display: flex;
+        align-items: center;
+    }
+
+    &__icon-location
+    {
+        margin-right: 0.5rem;
+    }
+
+    &__rating
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: $color-primary;
+        color: $color-white;
+        margin-left: 3rem;
+        padding: 0 2.25rem;
+        align-self: stretch;
+    }
+
+    &__rating-average
+    {
+        font-size: 2.25rem;
+        font-weight: 300;
+    }
+
+    &__rating-count
+    {
+        font-size: 1rem;
+        text-transform: uppercase;
+    }
+}
+
+.paragraph
+{
+    color: $color-grey-dark-2;
+
+    &:not(:last-of-type)
+    {
+        margin-bottom: 2rem;
+    }
+}
+
+.list
+{
+    list-style: none;
+    margin: 3rem 0;
+    padding: 3rem 0;
+    border-top: 1px solid $color-grey-light-4;
+    border-bottom: 1px solid $color-grey-light-4;
+    color: $color-grey-dark-2;
+    display: flex;
+    flex-wrap: wrap;
+
+    &__item
+    {
+        flex: 0 0 50%;
+
+        &::before
+        {
+            content: '';
+            display: inline-block;
+            width: 1rem;
+            height: 1rem;
+            margin-right: 0.7rem;
+
+            //background-image: url("../img/svg/chevron-thin-right.svg");
+            //background-size: cover;
+
+            background-color: $color-primary;
+            -webkit-mask-image: url("../img/svg/chevron-thin-right.svg");
+            -webkit-mask-size: cover;
+        }
+    }
+}
+
+.recommend
+{
+    font-size: 1.3rem;
+    color: $color-grey-dark-2;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__photo
+    {
+        box-sizing: content-box;
+        height: 3.5rem;
+        border-radius: 50%;
+        border: 3px solid $color-white;
+
+        &:not(:last-child)
+        {
+            margin-right: -1.5rem;
+        }
+    }
+}
+
+.review
+{
+    background-color: $color-white;
+    box-shadow: 0 2rem 5rem rgba($color-black, 0.4);
+    padding: 3rem;
+    margin-bottom: 3.5rem;
+    position: relative;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+
+    &::before
+    {
+        content: '\201C';
+        position: absolute;
+        top: -2.75rem;
+        left: -1rem;
+        font-size: 20rem;
+        line-height: 1;
+        color: $color-grey-light-2;
+        font-family: sans-serif;
+    }
+
+    &__text
+    {
+        position: relative;
+        z-index: 1;
+    }
+
+    &__user
+    {
+        margin-top: 2rem;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__photo
+    {
+        width: 4.5rem;
+        border-radius: 50%;
+        margin-right: 1rem;
+    }
+
+    &__user-box
+    {
+        flex: 1;
+    }
+
+    &__user-name
+    {
+        color: $color-grey-dark-2;
+        text-transform: uppercase;
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin-bottom: 0.4rem;
+    }
+
+    &__user-date
+    {
+        font-size: 1rem;
+
+    }
+
+    &__rating
+    {
+        color: $color-primary;
+        font-size: 2.2rem;
+        font-weight: 400;
+    }
+}
+
+.cta
+{
+    padding: 3.5rem 0;
+    text-align: center;
+
+    &__book-now
+    {
+        font-size: 1.6rem;
+        font-weight: 400;
+        text-transform: uppercase;
+        margin-bottom: 2.5rem;
+    }
+}
+
+.btn
+{
+    font-size: 1.5rem;
+    border: none;
+    outline: none;
+    border-radius: 100px;
+    background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark);
+    color: $color-white;
+    text-transform: uppercase;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+
+    & > *
+    {
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        transition: $transition;
+    }
+
+    &__visible
+    {
+        padding: 2rem 7rem;
+    }
+
+    &__invisible
+    {
+        padding: 2rem 0;
+        position: absolute;
+        top: -100%;
+        left: 0;
+    }
+
+    &:hover &__visible
+    {
+        transform: translateY(100%);
+    }
+
+    &:hover &__invisible
+    {
+        top: 0;
+    }
+}
