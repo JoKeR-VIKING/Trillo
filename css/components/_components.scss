@@ -497,3 +497,74 @@
         top: 0;
     }
 }
+
+@media only screen and (max-width: $size-large)
+{
+    .recommend
+    {
+        flex-direction: column;
+
+        &__photo
+        {
+            margin-top: 3.5rem;
+        }
+    }
+}
+
+@media only screen and (max-width: $size-medium)
+{
+    .side-nav
+    {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-top: 0;
+
+        &__list-item
+        {
+            margin-bottom: 0 !important;
+            align-self: stretch;
+            display: flex;
+        }
+
+        &__list-item--active
+        {
+            width: auto;
+        }
+    }
+
+    .legal
+    {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: $size-small)
+{
+    .overview
+    {
+        font-size: 1.6rem;
+
+        & > *
+        {
+            font-size: inherit;
+        }
+    }
+
+    .detail
+    {
+        flex-direction: column;
+        padding: 2.5rem;
+    }
+
+    .description
+    {
+        margin-right: 0;
+        margin-bottom: 2.5rem;
+    }
+
+    .review
+    {
+        align-self: stretch;
+    }
+}

@@ -21,12 +21,21 @@ body {
   background-size: cover;
 }
 
+@media only screen and (max-width: 68.75rem) {
+  html {
+    font-size: 50%;
+  }
+}
+@media only screen and (max-width: 37.5rem) {
+  html {
+    font-size: 35%;
+  }
+}
 .container {
   max-width: 120rem;
   margin: 8rem auto;
   background-color: #faf9f9;
   box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.3);
-  min-height: 50rem;
 }
 
 .header {
@@ -80,6 +89,22 @@ body {
   flex-direction: column;
 }
 
+@media only screen and (max-width: 75rem) {
+  .container {
+    margin: 0;
+    max-width: 100%;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+@media only screen and (max-width: 56.25rem) {
+  .content {
+    flex-direction: column;
+  }
+}
 .header__logo {
   height: 3.25rem;
 }
@@ -451,6 +476,57 @@ body {
 }
 .btn:hover .btn__invisible {
   top: 0;
+}
+
+@media only screen and (max-width: 68.75rem) {
+  .recommend {
+    flex-direction: column;
+  }
+  .recommend__photo {
+    margin-top: 3.5rem;
+  }
+}
+@media only screen and (max-width: 56.25rem) {
+  .side-nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 0;
+  }
+  .side-nav__list-item {
+    margin-bottom: 0 !important;
+    align-self: stretch;
+    display: flex;
+  }
+  .side-nav__list-item--active {
+    width: auto;
+  }
+
+  .legal {
+    display: none;
+  }
+}
+@media only screen and (max-width: 37.5rem) {
+  .overview {
+    font-size: 1.6rem;
+  }
+  .overview > * {
+    font-size: inherit;
+  }
+
+  .detail {
+    flex-direction: column;
+    padding: 2.5rem;
+  }
+
+  .description {
+    margin-right: 0;
+    margin-bottom: 2.5rem;
+  }
+
+  .review {
+    align-self: stretch;
+  }
 }
 
 /*# sourceMappingURL=index.css.map */

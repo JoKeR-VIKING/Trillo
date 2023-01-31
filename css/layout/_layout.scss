@@ -4,8 +4,6 @@
     margin: 8rem auto;
     background-color: $color-grey-light-1;
     box-shadow: $shadow-dark;
-
-    min-height: 50rem;
 }
 
 .header
@@ -65,3 +63,26 @@
     align-items: center;
     flex-direction: column;
 }
+
+@media only screen and (max-width: $size-largest)
+{
+    .container
+    {
+        margin: 0;
+        max-width: 100%;
+        width: 100%;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+
+@media only screen and (max-width: $size-medium)
+{
+    .content
+    {
+        flex-direction: column;
+    }
+}
+

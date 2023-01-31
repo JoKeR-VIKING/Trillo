@@ -22,3 +22,19 @@ body
     background: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark) no-repeat;
     background-size: cover;
 }
+
+@media only screen and (max-width: $size-large)
+{
+    html
+    {
+        font-size: 50%;
+    }
+}
+
+@media only screen and (max-width: $size-small)
+{
+    html
+    {
+        font-size: 35%;
+    }
+}
